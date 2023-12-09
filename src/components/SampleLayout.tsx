@@ -191,25 +191,7 @@ const SampleLayout: React.FunctionComponent<
         <meta name="description" content={props.description} />
         <meta httpEquiv="origin-trial" content={props.originTrial} />
       </Head>
-      <div>
-        <h1>{props.name}</h1>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={`https://github.com/${process.env.REPOSITORY_NAME}/tree/main/${props.filename}`}
-        >
-          See it on Github!
-        </a>
-        <p>{props.description}</p>
-        {error ? (
-          <>
-            <p>
-              Something went wrong. Do your browser and device support WebGPU?
-            </p>
-            <p>{`${error}`}</p>
-          </>
-        ) : null}
-      </div>
+
       <div className={styles.canvasContainer}>
         <div
           style={{
@@ -227,36 +209,7 @@ const SampleLayout: React.FunctionComponent<
         ></div>
         <canvas ref={canvasRef}></canvas>
       </div>
-      <div>
-        <nav className={styles.sourceFileNav}>
-          <ul>
-            {sources.map((src, i) => {
-              return (
-                <li key={i}>
-                  <a
-                    href={`#${src.name}`}
-                    data-active={activeHash == src.name}
-                    onClick={() => {
-                      setActiveHash(src.name);
-                    }}
-                  >
-                    {src.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        {sources.map((src, i) => {
-          return (
-            <src.Container
-              className={styles.sourceFileContainer}
-              data-active={activeHash == src.name}
-              key={i}
-            />
-          );
-        })}
-      </div>
+      
     </main>
   );
 };
