@@ -942,9 +942,9 @@ const init: SampleInit = async ({ canvas, pageState, gui, stats }) => {
 
 const Particles: () => JSX.Element = () =>
   makeSample({
-    name: 'Particles',
+    name: 'snowAccmulation',
     description:
-      'This example demonstrates rendering of particles simulated with compute shaders.',
+      'This is real-time snow accumulation on terrein based on real data',
     gui: true,
     stats: true,
     init,
