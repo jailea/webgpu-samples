@@ -34,8 +34,8 @@ const cellInstanceByteSize =
   0;
 
 const cameraDefaults = {
-  position: vec3.create(0, 300, -80),
-  target: vec3.create(0, 0, 0),
+  position: vec3.create(-80, 300, -100),
+  target: vec3.create(-180, 330, -160),
   // position: vec3.create(0, 5, -5),
   // target: vec3.create(0, 0, 0),
 };
@@ -448,7 +448,7 @@ const init: SampleInit = async ({ canvas, pageState, gui, stats }) => {
   }
   console.log("amount of mesh:"+(heightTexture.width-1)*(heightTexture.height-1));
   //heightTexture=cubeTexture;
-  const uniformArray = new Float32Array([0.1, 0.1]);
+  const uniformArray = new Float32Array([0.7, 0.7]);
   const gridBuffer = device.createBuffer({
     label: "Grid Uniforms",
     size: uniformArray.byteLength,
@@ -744,7 +744,7 @@ const init: SampleInit = async ({ canvas, pageState, gui, stats }) => {
     (2 * Math.PI) / 5,
     aspect,
     1,
-    5000.0
+    50000.0
   );
 
   const modelViewProjectionMatrix = mat4.create();

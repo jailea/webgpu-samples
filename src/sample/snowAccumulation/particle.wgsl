@@ -133,7 +133,7 @@ struct VertexOutput {
 
   @builtin(position) Position : vec4<f32>,
 }
-const heightMul:f32=0.01;
+const heightMul:f32=0.08;
 @vertex
 fn vs_main(in : VertexInput,
             @builtin(instance_index) instance: u32) -> VertexOutput {
